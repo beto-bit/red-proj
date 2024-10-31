@@ -17,7 +17,7 @@
 constexpr auto max_streamsize = std::numeric_limits<std::streamsize>::max();
 
 
-void clearConsole() {
+void clear_console() {
 #if defined(__linux__)
     std::cout << "\033[2J\033[1;1H";
 #elif _WIN32
@@ -43,7 +43,7 @@ void wait_enter() {
 }
 
 void wait_enter(std::string_view str) {
-    std::cout << str << '\n';
+    std::cout << str;
     wait_enter();
 }
 

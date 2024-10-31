@@ -6,7 +6,7 @@
 #include <string_view>
 #include <optional>
 
-void clearConsole();
+void clear_console();
 
 void wait_enter();
 void wait_enter(std::string_view str);
