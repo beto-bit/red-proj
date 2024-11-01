@@ -9,6 +9,7 @@ enum Profile : char {
     Master = '>'
 };
 
+[[nodiscard]]
 constexpr std::optional<Profile> profile_from_char(char ch) {
     switch (ch) {
         case '_':   return Profile::HighSchool;
