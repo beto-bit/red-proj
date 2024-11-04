@@ -13,7 +13,6 @@
 #include "consoleIO.hpp"
 
 
-[[maybe_unused]]
 constexpr auto max_streamsize = std::numeric_limits<std::streamsize>::max();
 
 
@@ -38,7 +37,6 @@ void wait_enter() {
     if (!std::cin.eof())
         std::cin.ignore(max_streamsize, '\n');
 
-    std::cin.clear();
     std::cin.get();
 }
 

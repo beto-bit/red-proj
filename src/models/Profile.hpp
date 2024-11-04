@@ -1,7 +1,7 @@
 #pragma once
 
 #include <optional>
-
+#include <iosfwd>
 
 enum Profile : char {
     HighSchool = '_',
@@ -18,3 +18,5 @@ constexpr std::optional<Profile> profile_from_char(char ch) {
         default:    return {};
     }
 }
+
+std::ostream& operator<<(std::ostream& os, Profile profile);

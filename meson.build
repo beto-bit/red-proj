@@ -5,4 +5,11 @@ project(
     default_options: ['warning_level=3', 'cpp_std=c++20', 'b_sanitize=address'],
 )
 
-executable('manager', 'src/main.cpp', 'src/ui/consoleIO.cpp')
+executable(
+    'manager',
+    'src/main.cpp',
+    'src/ui/consoleIO.cpp',
+    'src/db/db.cpp',
+    'src/models/Employee.cpp',
+    'src/models/Profile.cpp',
+)
