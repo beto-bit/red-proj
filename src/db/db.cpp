@@ -1,4 +1,5 @@
 #include <fstream>
+#include <ostream>
 #include <string>
 #include <vector>
 
@@ -14,6 +15,11 @@ enum class DataPrefix : char {
     Workstation = '%'
 };
 
+std::ostream& operator<<(std::ostream& os, DataPrefix prefix) {
+    os << to_underlying(prefix);
+    return os;
+}
+
 
 void write_file_company(
     const std::string &filename,
@@ -25,16 +31,16 @@ void write_file_company(
         return;
 
     for (const auto& comp : companies) {
-        file << to_underlying(DataPrefix::Company) << comp.name << '\n';
+        file << DataPrefix::Company << comp.name << '\n';
 
         for (const auto& dept : comp.departments) {
-            file << to_underlying(DataPrefix::Department) << dept.name << '\n';
+            file << DataPrefix::Department << dept.name << '\n';
 
             for (const auto& area : dept.areas) {
-                file << to_underlying(DataPrefix::Area) << area.name << '\n';
+                file << DataPrefix::Area << area.name << '\n';
 
                 for (const auto& worktn : area.workstations)
-                    file << to_underlying(DataPrefix::Workstation) << worktn.name << '\n';
+                    file << DataPrefix::Workstation << worktn.name << '\n';
             }
         }
     }

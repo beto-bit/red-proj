@@ -1,3 +1,7 @@
+.PHONY: build
+build:
+	@ meson compile -C build
+
 .PHONY: crun
 crun:
 	@ meson compile -C build
