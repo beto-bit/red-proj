@@ -97,7 +97,7 @@ std::variant<Company, FileError> read_file_company(
                     .areas.back()
                     .workstations
                     .push_back({ content });
-                    break;
+                break;
 
             default:
                 return FileError::BadFormat;
